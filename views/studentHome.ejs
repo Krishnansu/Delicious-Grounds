@@ -1,0 +1,48 @@
+
+<%- include("partials/header"); -%>
+ 
+
+  <div id="home" class = "home-image" style="height: 40rem;">
+    <div class="texta">
+        <div class="container">
+            <h1 ><span class="typed-text"></span><span class="cursor">&nbsp;</span></h1>
+        </div>
+        <h5><em>Open from 02:00PM to 02:00AM</em></h5>
+        <h3>CURRENTLY OPEN</h3>
+            
+    </div>
+  </div>
+
+        <div id="pricing" class="menu" >
+            <h1 style="margin-top:3rem;"><strong>MENU</strong></h1>
+            <p class="menu-text">Our list of finely curated dishes available</p>
+            <strong><center><hr class="menu-horizontal"></center></strong>
+        
+                <div class="row">
+                    <% items.forEach(function(item){%>
+                        <div class="col-lg-4 col-md-6 col-sm-12 card">
+                            <img src = "<%=item.menuImg%>" class="food-image"> 
+                            <div class="food-title">
+                                <h4><strong><%=item.name%></strong></h4>
+                            </div> 
+                            <div class="food-description">
+                                <h6><%=item.description%></h6>
+                            </div>
+                            <div class="row food-details">
+                                <div class="col-md-6 col-sm-12 food-price">
+                                    ₹ <%=item.price%>
+                                </div>
+                                <form action= "/cart" method = "post" class="col-md-6 col-sm-12 ">
+                                    <button type="submit" name="addToCart" class = "food-container order-button" value= "<%=item._id%>">Add To Cart</button>
+                                </form>
+                                
+                            </div>
+                        </div>
+                    <%})%>
+                    
+        
+                </div>
+        </div>
+
+  
+<%- include("partials/footer"); -%>

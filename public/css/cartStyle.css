@@ -1,0 +1,154 @@
+
+body {
+    font-family: 'Montserrat',sans-serif;
+    background: url("/images/homepage-image.jpeg");
+}
+
+
+
+
+/* navbar */
+
+.navbar {
+    padding: 0.2rem 2rem 0.2rem 2rem;
+}
+
+.nav-item {
+    padding: 0 18px;
+}
+
+.nav-link {
+    color: white;
+    font-family: "Montserrat";
+    font-weight: light;
+    font-size: 1.2rem;
+}
+
+.nav-link:hover {
+    color: black;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.navbar-brand {
+    color: white;
+    font-family: "Ubuntu";
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.navbar-brand:hover {
+    color: white;
+}
+
+
+.navbar-items {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#title{
+    background-color:#b92809;
+    color: white;
+}
+
+
+
+
+
+/* title header */
+
+
+.title-div {
+    display: flex;
+    align-items: center; justify-content: center;
+    margin: 0 auto;
+    padding: 100px 0;
+}
+
+/* .title-div::before {
+    background: url("images/platter-2009590_1920.jpg");
+    z-index: -1;
+    opacity: 0.6;
+} */
+
+.title-header {
+    font-family: 'Arvo', serif;
+    color: white;
+    transition: all 0.2s ease-in;
+}
+
+/* .title-header:hover {
+    text-shadow: 3px 3px 4px rgb(20, 26, 26);
+} */
+
+
+
+/* cart-data */
+
+section {
+    background-color: antiquewhite;
+    margin: 0 50px;
+    border-radius: 12px;
+}
+
+
+.container-head {
+    font-family: 'Merriweather Sans', sans-serif;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    margin: 0 50px;
+    background-color: #ff523b;
+    /* padding: 23px 23px; */
+}
+
+.table-head {
+    padding: 23px 120px;
+    color: white;
+}
+
+h3 {
+    font-size: medium;
+}
+
+img {
+    border-radius: 12px;
+    width: 100px;
+    height: 100px;
+    margin-right: 10px;
+    transition: all 0.5s ease-out;
+}
+
+img:hover {
+    transform: translateY(-8px);
+}
+
+
+.cart-data-row {
+    padding: 36px 47px;
+    display: flex;
+    /* justify-content: center; */
+    margin: 0 50px;
+}
+
+.img-with-data {
+    display: flex;
+    
+    /* padding: 4px 4px; */
+    justify-content: space-between;
+    padding: 14px;
+}
+
+.img-with-data a {
+    color: #ff523b;
+}
+
+.data-row {
+    text-align: center;
+}
+
+input[type="number"] {
+    width: 20%;
+}

@@ -1,0 +1,102 @@
+body {
+    font-family: 'Montserrat',sans-serif;
+}
+
+.navbar {
+    padding: 0.2rem 2rem 0.2rem 2rem;
+}
+
+.nav-item {
+    padding: 0 18px;
+}
+
+.nav-link {
+    color: white;
+    font-family: "Montserrat";
+    font-weight: light;
+    font-size: 1.2rem;
+}
+
+.nav-link:hover {
+    color: black;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.navbar-brand {
+    color: white;
+    font-family: "Ubuntu";
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.navbar-brand:hover {
+    color: white;
+}
+
+
+.navbar-items {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#title{
+    background-color:#b92809;
+    color: white;
+}
+
+.heading {
+    text-align: center;
+    padding: 10px;
+    margin: 0px;
+}
+
+.orders {
+    width: 50%;
+    margin: 0px;
+}
+
+.title-contents {
+    text-align: center;    
+}
+
+.card {
+    border: 2px solid black;
+    margin-bottom: 10px;
+    border-radius: 0px;
+}
+
+.contents {
+    margin: 2px;
+    text-align: justify;
+}
+
+.hidden {
+    display: none;
+}
+
+.message1 {
+    color: green;
+}
+
+.message2 {
+    color: red;
+}
+
+.order-id {
+    
+}
+
+.food-image {
+    width: 100%;
+    height: 100%;
+
+}
+
+.sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+

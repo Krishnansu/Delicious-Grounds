@@ -1,0 +1,167 @@
+body {
+    font-family: 'Montserrat',sans-serif;
+}
+
+.navbar {
+    padding: 0.2rem 2rem 0.2rem 2rem;
+}
+
+.nav-item {
+    padding: 0 18px;
+}
+
+.nav-link {
+    color: white;
+    font-family: "Montserrat";
+    font-weight: light;
+    font-size: 1.2rem;
+}
+
+.nav-link:hover {
+    color: black;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.navbar-brand {
+    color: white;
+    font-family: "Ubuntu";
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.navbar-brand:hover {
+    color: white;
+}
+
+.menu{
+    padding: 50px;
+    text-align: center;
+}
+
+.menu-text{
+    font-size: 120%;
+}
+
+.card {
+    padding: 15px;
+    border: 2px solid white;
+    border-radius: 0px;
+    color: black;
+    text-align: center;
+}
+
+.food-container{
+    padding: 0px;
+    display: inline;
+}
+
+.food-details {
+    margin: 0px;
+    text-align: left;
+}
+
+.food-container{
+    border: 0px;
+    background-color: #b92809;
+    color: white;
+}
+
+.food-container:hover {
+    color: black;
+}
+
+.food-image{
+    height: 15rem;
+    width: 100%;
+    padding: 0px;
+}
+
+.food-price {
+    padding: 10px 0px 10px 0px;
+    text-align: center;
+    border: 0px;
+    background-color: green;
+    color: white;
+
+}
+
+.a {
+    margin: 10px;
+}
+
+.food-price:hover {
+    color: black;
+}
+
+.order-button {
+    background-color:none;
+    padding: 10px;
+}
+
+
+.navbar-items {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#title{
+    background-color:#b92809;
+    color: white;
+}
+
+.update{
+    text-align: center;
+    padding: 20px 0 0 0;
+    font-weight: bold;
+}
+
+.pending-orders{
+    background-color: #b92809;
+    text-align: center;
+    color: white;
+}
+
+.pending{
+    font-weight: bold;
+    padding: 20px;
+}
+
+.content {
+    padding: 0 20px 0 20px;
+}
+
+.order-list {
+    margin: 20px;
+    background-color: white;
+    color: black;
+}
+
+.mark-completed {
+    background-color: green;   
+    border: 0px;
+    margin-bottom: 2px;
+    color: white;
+}
+
+.cancel-order {
+    background-color: red;
+    border: 0px;
+    margin-top: 2px;
+    color: white;
+}
+
+.mark-completed:hover {
+    color: black;
+}
+
+.cancel-order:hover {
+    color: black;
+}
+
+.sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }

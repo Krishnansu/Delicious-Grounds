@@ -1,0 +1,78 @@
+<%- include("partials/cartHeader"); -%>
+
+
+    <!-- header -->
+    <div class="title-div">
+        <h1 class="title-header">Your Cart</h1>
+        
+    </div>
+
+
+    <!-- cart page -->
+
+    <section class="cart">
+        <div class="container-head">
+
+            <div class="table-head col-sm-3"><h3>Product</h3></div>
+            <div class="table-head col-sm-3"><h3>Price</h3></div>
+            <div class="table-head col-sm-3"><h3>Quantity</h3></div>
+            <div class="table-head col-sm-3"><form action="/placeOrder" method="get"><button class="btn btn-light" type="submit">Place Order</button></form></div>
+
+        </div>
+        
+        <%if(foundCart.items!=null){%>
+        <% foundCart.items.forEach(function(food){%>
+            <%foundItems.forEach(function(menu){%>
+                <%if(String(food.itemId) === String(menu._id)){%>
+                    <div class="cart-data-row">
+
+                        <div class="data-row col-sm-3">
+                            <div class="img-with-data">
+                                <img src="<%=menu.menuImg%>" alt="">
+                                <p><%=menu.name%></p>
+                                <br>
+                                <form action="/cart/delete" method="post">
+                                    <button name = "remove" type="submit" value="<%=food.itemId%>">Remove</button>
+                                </form>
+                                
+                            </div>
+                        </div>
+
+                        <div class="data-row col-sm-3">
+                            <p>₹ <%=menu.price%></p>
+                        </div>
+
+                        <div class="data-row col-sm-3 quantity-counter">
+                            <p>1</p>
+                        </div>
+
+
+                    </div>
+                <%}%>
+            <%});%>
+        
+        <%})}; %>
+            
+
+
+
+
+        
+
+
+    </section>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<%- include("partials/footer"); -%>

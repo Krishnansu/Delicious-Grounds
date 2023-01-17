@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Admin</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="icon" href="images/Logo.ico">
+    <link rel="stylesheet" href="css/admin-styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css" integrity="sha384-QYIZto+st3yW+o8+5OHfT6S482Zsvz2WfOzpFSXMF9zqeLcFV0/wlZpMtyFcZALm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;900&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+
+
+<section id="title" class="sticky">
+    <div class="container-fluid top-container"> 
+        <!-- Nav Bar -->       
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid navbar-items">
+            <a href="/staffHome"><img src= "images/Logo.jpg" style="max-width: 6rem"></a>
+            <a class="navbar-brand" href="#">DELICIOUS GROUNDS</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse modify" id="navbarNavDropdown">
+                <ul class="navbar-nav ms-auto text-center">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="/staffHome">HOME</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="/staffHome#pending-order">VIEW PENDING ORDERS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/ordersReceived">ORDERS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logout">LOGOUT</a>
+                    </li>
+                </ul>
+            </div>
+            </div>
+        </nav>
+    </div>    
+  </section>
+
+
+  <div>
+    <h2 class="update">UPDATE MENU</h2>   
+           <form action="/newItem" method="get" style="display: flex; flex-direction: row-reverse;"><button class="col-md-3 col-sm-12 ms-auto food-price" > ADD</button></form>
+  </div>
+  
+  <div id="menu" class="row a">
+    <% items.forEach(function(item){%>
+    <div class="col-lg-4 col-md-6 col-sm-12 card">
+        <img src = "<%=item.menuImg%>" class="food-image"> 
+        <div class="food-title">
+            <h4><strong><%=item.name%></strong></h4>
+        </div> 
+        <div class="food-description">
+            <h6><%=item.description%></h6>
+        </div>
+        <div class="row food-details">
+            <form action="/delete" method="post"><button name="deleteItem" value="<%=item._id%>" class = "col-md-12 col-sm-12 food-container order-button">REMOVE</button></form>
+            
+        </div>
+    </div>
+    <%})%>
+
+    
+
+</div>
+
+
+<% let x = 0;%>
+<div class="pending-orders" id="pending-order">
+    <h2 class="pending">PENDING ORDERS</h2>
+ 
+    <%orders.forEach(function(order){ %>
+        <%if(order.accept_status===false && order.reject_status===false){%>
+        
+
+        <div class="container content" style="padding: 0 7rem 0 7rem">
+            <div class="order-list">
+                <div class="order-contents">
+                    <ul style="list-style: none;">
+                        <%order.items.forEach(function(item){%>
+                            <%items.forEach(function(menu){%>
+                                <%if(String(item.itemId) === String(menu._id)){%>
+                                    <li ><span ><%=menu.name%></span></li>
+                                    <% x += menu.price %>
+                                <%}%>
+                            <%});%>
+                        <%});%>
+                    </ul>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 order-price">
+                        <center><strong>Total amount: Rs .<%= x %></strong></center>
+                        <%x = 0 %>
+                    </div>
+        
+                    <div name="orderID" value="<%=order._id%>" class="col-md-6 col-sm-12 order-customer">
+                        
+                    </div>
+                </div>
+                <form action="/staffHome1" method="post"><button type="submit" name="AcceptStatus" value="<%=order._id%>" class="col-sm-12 mark-completed">
+                    ACCEPT ORDER
+                </button></form>
+                
+                <form action="/staffHome0" method="post"><button type="submit" name="RejectStatus" value="<%=order._id%>" class="col-sm-12 cancel-order">
+                    CANCEL ORDER
+                </button></form>
+                
+                </div>
+            </div>
+       
+
+        <%}})%>
+  
+    
+
+
+    
+    </div>                
+</div>
+</body>
+</html>

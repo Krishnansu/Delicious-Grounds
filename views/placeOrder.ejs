@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/paymentStyle.css">
+  <title>Document</title>
+</head>
+<body>
+
+  
+<div class="iphone">
+  <header class="header">
+    <h1>Checkout</h1>
+  </header>
+
+  <form action="/placeOrder" class="form" method="POST">
+    <div>
+      <h2>Customer</h2>
+
+      <div class="card">
+        <address>
+          <%=foundUser[0].userName%><br />
+          <%=foundUser[0].mobile%>
+        
+        </address>
+      </div>
+    </div>
+
+    <fieldset>
+      <legend>Payment Method</legend>
+
+      <div class="form__radios">
+        <div class="form__radio">
+          <label for="visa"><img src="https://raw.githubusercontent.com/detain/svg-logos/aecbca0b533703a389211cddb0ca159a5d50553e/svg/visa.svg" style="height: 3rem;width: 3rem;">Visa Payment</label>
+          <input checked id="visa" name="payment-method" type="radio" />
+        </div>
+
+        <div class="form__radio">
+          <label for="paypal"><img src="https://www.vectorlogo.zone/logos/upi/upi-icon.svg" style="height: 3rem;width: 3rem;"> UPI</label>
+          <input id="paypal" name="payment-method" style="align-items: flex-end;" type="radio" />
+        </div>
+
+        <div class="form__radio">
+          <label for="paypal"><img src="https://uxwing.com/wp-content/themes/uxwing/download/banking-finance/bank-icon.svg" style="height: 3rem;width: 3rem;"> Net Banking</label>
+          <input id="paypal" name="payment-method" style="align-items: flex-end;" type="radio" />
+        </div>
+      </div>
+    </fieldset>
+
+    <div>
+      <h2> Bill</h2>
+
+
+
+<% var x=0;%>
+      <table>
+        <tbody>
+          <%foundCart.items.forEach(function(food){%>
+            <% for(let i=0;i<foundItem.length;i++){%>
+              <%if(String(foundItem[i]._id)===food.itemId){%>
+                <%x+=foundItem[i].price%>
+                <tr>
+                  <td><%=foundItem[i].name%></td>
+                  <td style="align-items:right">₹ <%=foundItem[i].price%></td>
+                </tr>
+    
+         <%} }});%>
+          
+          <tr>
+            <td>Sub Total</td>
+            <td style="align-items:right">₹ <%=x%></td>
+          </tr>
+          <tr>
+            <td>Discount 0%</td>
+            <td style="align-items:right">- ₹ 0</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td>Total</td>
+            <td style="align-items:right">₹ <%=x%></td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+
+    <div>
+      <button class="button button--full" type="submit">Pay Now</button>
+    </div>
+  </form>
+</div>
+
+
+  
+</body>
+</html>
