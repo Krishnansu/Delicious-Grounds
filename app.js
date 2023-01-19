@@ -26,15 +26,16 @@ let date = dd + '/' + mm + '/' + yyyy;
 const app = express();
 
 app.use(express.static("public"));
-app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({
   extended: true
 }));
+app.set('view engine', 'ejs');
+
 
 app.use(session({
   secret: "Our little secret.",
-  resave: false,
-  saveUninitialized: false
+  resave: true,
+  saveUninitialized: true
 }));
 
 app.use(passport.initialize());
