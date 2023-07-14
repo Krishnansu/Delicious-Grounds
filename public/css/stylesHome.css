@@ -46,7 +46,7 @@ body {
 }
 
 .home-image{
-    background-image: url("/images/homepage-image.jpeg");
+    background-image: url("https://thumbs.dreamstime.com/z/asian-food-background-various-ingredients-rustic-stone-top-view-vietnam-thai-cuisine-148762904.jpg");
     text-align: center;
     color: white;
     padding: 100px;
@@ -54,6 +54,7 @@ body {
 }
 
 .texta{
+    margin-top: 5rem;
     padding: 20px;
     opacity: 0.6;
     background-color: black;
@@ -99,7 +100,7 @@ body {
 }
 
 .food-image{
-    height: 10rem;
+    height: 15rem;
     width: 100%;
     padding: 0px;
 }

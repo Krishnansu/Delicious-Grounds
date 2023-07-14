@@ -2,7 +2,7 @@
 <%- include("partials/header"); -%>
  
 
-  <div id="home" class = "home-image" style="height: 40rem;">
+  <div id="home" class = "home-image" style="height: 60rem;">
     <div class="texta">
         <div class="container">
             <h1 ><span class="typed-text"></span><span class="cursor">&nbsp;</span></h1>
@@ -20,7 +20,7 @@
         
                 <div class="row">
                     <% items.forEach(function(item){%>
-                        <div class="col-lg-4 col-md-6 col-sm-12 card">
+                        <div class="border border-3 col-lg-4 col-md-6 col-sm-12 card">
                             <img src = "<%=item.menuImg%>" class="food-image"> 
                             <div class="food-title">
                                 <h4><strong><%=item.name%></strong></h4>

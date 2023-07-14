@@ -61,6 +61,7 @@
                           <div class="col-sm-9">
                               <span class="col-sm-3"><strong>Order ID: </strong></span>
                               <span class="col-sm-3">Rs .<%=order._id%></span>
+                              <br>
                               <%order.items.forEach(function(ID){%>
                                 <br>
                                   <%items.forEach(function(item){%>
@@ -68,17 +69,19 @@
                                           
                                             <span class="col-sm-3"><strong><%=item.name%></strong></span>
                                             <span class="col-sm-3">Rs .<%=item.price%></span>
-                                            <br>
+                                            
                                           
                                           <% y += item.price %>
                                       <%}%>
                                   <%});%>
   
                               <%});%>
-                              <span class="col-sm-3"><strong>Amount</strong></span>
+                              <br>
+                              <span class="col-sm-3"><strong>Total Amount : </strong></span>
                               <span class="col-sm-3">Rs .<%=y%></span>
                               <% y =0%>
-  
+                                <br>
+                                <br>
                               <form action = "/completion" method= "post">
                                   <%if(!order.accept_status && !order.reject_status){%>
                                       <button type="button" class="btn btn-warning">Pending Confirmation</button>
